@@ -1,3 +1,7 @@
+// Daniel Shiffman
+// https://thecodingtrain.com/
+// https://editor.p5js.org/codingtrain/sketches/
+
 class Matrix{
   int rows, cols;
   float[][] values;
