@@ -1,3 +1,7 @@
+// Daniel Shiffman
+// https://thecodingtrain.com/
+// https://editor.p5js.org/codingtrain/sketches/
+
 float sigmoid(float x){
   return 1 / (1+(float)Math.exp(-x));
 }
