@@ -81,6 +81,10 @@ Player crossOver(Player parentA, Player parentB) {
   return child;
 }
 
+// Daniel Shiffman
+// https://thecodingtrain.com/
+// https://editor.p5js.org/codingtrain/sketches/
+
 void calcFit() {
   float sum = 0;
 
