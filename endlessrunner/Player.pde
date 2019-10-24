@@ -7,7 +7,7 @@ class Player {
   boolean isGrounded, hasCollided;
   PVector topRight, bottomLeft;
   NeuralNetwork brain;
-  float[] inputs = new float[10];
+  float[] inputs = new float[12];
   float score = 0;
   float fitness = 0;
 
@@ -24,7 +24,7 @@ class Player {
     bottomLeft = new PVector();
     hasCollided = false;
     
-    brain = new NeuralNetwork(10,6,2);
+    brain = new NeuralNetwork(12,7,2);
   }
   
   void mutate(){
@@ -64,16 +64,18 @@ class Player {
       }
     }
     
-    inputs[0] = x / width;
-    inputs[1] = y / height;
-    inputs[2] = velocity / 10;
-    inputs[3] = w / width;
-    inputs[4] = h / height;
-    inputs[5] = closestEnemy.x / width;
-    inputs[6] = closestEnemy.y / height;
-    inputs[7] = closestEnemy.speed / 10;
-    inputs[8] = closestEnemy.w / width;
-    inputs[9] = closestEnemy.h / height;
+    inputs[0] = y / height;
+    inputs[1] = closestEnemy.y / height;
+    inputs[2] = closestEnemy.x / width;
+    inputs[3] = velocity / 10;
+    inputs[4] = closestEnemy.speed / 10;
+    inputs[5] = 1 / (topRight.x - closestEnemy.x);
+    inputs[6] = 1 / (topRight.y - closestEnemy.y);
+    inputs[7] = x / width;
+    inputs[8] = w / width;
+    inputs[9] = h / height;
+    inputs[10] = closestEnemy.h / height;
+    inputs[11] = closestEnemy.w / width;
     
     float[] outputs = brain.feedForward(inputs);
     
