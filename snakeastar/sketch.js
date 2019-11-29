@@ -76,7 +76,7 @@ function draw() {
 		}
 
 		if (path.length == 0) {
-			console.log('here');
+			console.log('no solution');
 		}
 	} else if (pathSet) {
 		let moves = pathToTake.length - 1;
